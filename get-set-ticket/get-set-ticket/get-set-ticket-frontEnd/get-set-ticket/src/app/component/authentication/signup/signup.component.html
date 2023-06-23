@@ -1,0 +1,48 @@
+<div class="template-signup-form container-border light-grey-background flex-center" theme="vwag">
+    <div id="theme-switch-wrapper-106">
+        <div id="theme-switch-container-106">
+            <groupui-card elevation="4" padding="32px 32px 32px 32px">
+                <div class="header">
+                    <div>
+                        <groupui-headline heading="h3" weight="normal">Sign up</groupui-headline>
+                    </div>
+                    <div class="signin-btn-container">
+                        <groupui-button (click)="navigateToLogin()" alignment="right" size="m" target="self" icon="arrow-right-32"
+                            icon-position="right" variant="tertiary">Log in</groupui-button>
+                    </div>
+                </div>
+
+                <groupui-divider></groupui-divider>
+                <form (ngSubmit)="signUp()" [formGroup]="signupForm">
+                <div class="input-wrapper">
+                    <groupui-input ngDefaultControl formControlName="email" placeholder="Email" maxlength="16" pattern="[A-Za-z]{3}" severity="none" type="text">
+                        <span slot="label">Email</span>
+                    </groupui-input>
+                </div>
+
+                <div class="input-wrapper">
+                    <groupui-input ngDefaultControl formControlName="password" placeholder="Password" maxlength="16" pattern="[A-Za-z]{3}" severity="none"
+                        type="password">
+                        <span slot="label">Password</span>
+                    </groupui-input>
+                </div>
+
+                <div class="input-wrapper">
+                    <groupui-input ngDefaultControl formControlName="name" placeholder="Full Name" maxlength="16" pattern="[A-Za-z]{3}" theme="vwag" typing-info-template="{characters-used}/{characters-max}">
+                        <span slot="label">Name</span>
+                      </groupui-input>
+                </div>
+
+                <groupui-checkbox>
+                    I agree to the Terms and Privacy Policy
+                </groupui-checkbox>
+
+                <div class="btn-container">
+                    <groupui-button type="submit" class="signin-btn" target="self" fullwidth="true">Sign up</groupui-button>
+                </div>
+
+            </form>
+            </groupui-card>
+        </div>
+    </div>
+</div>

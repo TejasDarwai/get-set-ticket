@@ -1,0 +1,42 @@
+<div style="margin-top: 5rem;" class="container container-md">
+    <div class="template-signin-form container-border light-grey-background flex-center" theme="vwag">
+        <div id="theme-switch-wrapper-105">
+          <div id="theme-switch-container-105">
+      <groupui-card elevation="4" padding="32px 32px 40px 32px">
+          <div class="header">
+              <div>
+                  <groupui-headline heading="h3" weight="normal">Log in</groupui-headline>
+              </div>
+              <div class="signin-btn-container">
+                  <groupui-button (click)="navigateToSignUp()" alignment="right" size="m" target="self" icon="arrow-right-32" icon-position="right" variant="tertiary">Sign up</groupui-button>
+              </div>
+          </div>
+      
+          <groupui-divider></groupui-divider>
+        <form (ngSubmit)="login()" [formGroup]="loginForm">
+      
+          <div class="input-wrapper">
+              <groupui-input ngDefaultControl formControlName="email" placeholder="Email or Username" maxlength="16" pattern="[A-Za-z]{3}" severity="none" type="text">
+              </groupui-input>
+          </div>
+      
+          <div class="input-wrapper">
+              <groupui-input ngDefaultControl formControlName="password" placeholder="Password" maxlength="16" pattern="[A-Za-z]{3}" severity="none" type="password">
+              </groupui-input>
+          </div>
+      
+          <groupui-checkbox>
+              Remember me
+          </groupui-checkbox>
+      
+          <div class="btn-container">
+              <groupui-button type="submit" class="signin-btn" target="self" fullwidth="true">Log in</groupui-button>
+              <groupui-link href="#" target="self" quiet="true" inverted="false" variant="primary">Forgot your password</groupui-link>
+          </div>
+
+        </form>
+      </groupui-card>
+      </div>
+        </div>
+      </div>
+</div>

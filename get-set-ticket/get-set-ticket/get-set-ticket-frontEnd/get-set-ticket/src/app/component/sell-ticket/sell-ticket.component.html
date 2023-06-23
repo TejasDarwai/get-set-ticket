@@ -1,0 +1,141 @@
+<div style="width: 90%; margin-left: 5%; margin-top: 2rem;">
+    <div style="display: flex; justify-content: space-between;">
+        <groupui-headline style="color:#00354d; font-weight: normal; font-size: 1.3rem;">Tickets you have added for sell</groupui-headline>
+        <groupui-button (click)="showNewTicketForm = !showNewTicketForm" variant="primary">Add New Ticket</groupui-button>
+    </div>
+    <div class="container-md">
+        <div class="table-sticky-header container-border" style="padding: 1.5rem;">
+            <div class="table-demo scroll-box">
+              <div class="table-responsive">
+                <table class="table table-bordered border border-secondary">
+                  <table class="table caption-top">
+                    <thead>
+                      <tr>
+                        <th scope="col">Source</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">journey Start Date</th>
+                        <th scope="col">journey End Date</th>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Train Number</th>
+                        <th scope="col">PNR Number</th>
+                        <th scope="col">Passenger Name</th>
+                        <th scope="col">Passenger Age</th>
+                        <th scope="col">Passenger Gender</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let ticket of tickets">
+                        <td>{{ticket.source}}</td>
+                        <td>{{ticket.destination}}</td>
+                        <td>{{ticket.journeyStartDate | date: 'MMM d, y'}}</td>
+                        <td>{{ticket.journeyEndDate | date: 'MMM d, y'}}</td>
+                        <td>{{ticket.trainName}}</td>
+                        <td>{{ticket.trainNo}}</td>
+                        <td>{{ticket.pnrNo}}</td>
+                        <td>{{ticket.name}}</td>
+                        <td>{{ticket.age}}</td>
+                        <td>{{ticket.gender}}</td>
+                        <td><groupui-button variant="primary" onclick="document.querySelector('groupui-modal')['displayed'] = true">Delete</groupui-button>
+                          <groupui-modal close-button="true" displayed="false" overflow="auto" padding="50px">
+                            <groupui-headline heading="h5">Are you sure want to delete the ticket?</groupui-headline>
+                            <groupui-button style="margin-top: 1.5rem;" variant="primary" (click)="deleteTicket(ticket.ticketId)">Delete</groupui-button>
+                          </groupui-modal>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div *ngIf="showNewTicketForm" class="container-md" style="display: flex; justify-content: space-evenly;">
+        <div class="template-forms-others-service container-border light-grey-background flex-center">
+            <div id="theme-switch-wrapper-108">
+              <div id="theme-switch-container-108">
+            <!--TEMPLATE STARTS HERE-->
+            <form (ngSubmit)="createTicket()" [formGroup]="newTicketForm">
+            <groupui-card padding="40px" elevation="8">
+              <groupui-grid gutter="16px" margin-type="custom" margin="0px">
+                <groupui-headline heading="h1">Add New Ticket</groupui-headline>
+          
+                <groupui-headline heading="h5" class="sub-headings">Ticket Information</groupui-headline>
+                <groupui-grid-row>
+                  <groupui-grid-col m="6">
+                    <groupui-input formControlName="source" type="text" value="" placeholder="Source" ngDefaultControl>
+                      <span slot="label">Source</span>
+                    </groupui-input>
+                  </groupui-grid-col>
+                  <groupui-grid-col m="6">
+                    <groupui-input formControlName="destination" value="" placeholder="Destination" ngDefaultControl>
+                      <span slot="label">Destination</span>
+                    </groupui-input>
+                  </groupui-grid-col>
+                  <groupui-grid-col m="6">
+                    <div>
+                      <span>Journey Start Date</span>
+                      <input type="date" formControlName="journeyStartDate" ngDefaultControl>
+                    </div>
+                  </groupui-grid-col>
+                  <groupui-grid-col m="6">
+                    <div>
+                      <span>Journey End Date</span>
+                      <input type="date" formControlName="journeyEndDate" ngDefaultControl>
+                    </div>
+                  </groupui-grid-col>
+                </groupui-grid-row>
+
+                <groupui-headline heading="h5" class="sub-headings">Passenger Information</groupui-headline>
+              <groupui-grid-row>
+                  <groupui-grid-col m="6" l="4">
+                    <groupui-input formControlName="passengerName" value="" placeholder="Passanger Name" ngDefaultControl>
+                      <span slot="label">Passenger Name</span>
+                    </groupui-input>
+                  </groupui-grid-col>
+                  <groupui-grid-col m="6" l="4">
+                    <groupui-input formControlName="age" placeholder="Passanger Age" ngDefaultControl>
+                      <span slot="label">Passenger Age</span>
+                    </groupui-input>
+                  </groupui-grid-col>
+                  <groupui-grid-col m="6" l="4">
+                    <groupui-input formControlName="gender" placeholder="Passanger Gender M/F" ngDefaultControl>
+                      <span slot="label">Passenger Gender</span>
+                    </groupui-input>
+                  </groupui-grid-col>
+                </groupui-grid-row>
+
+                <groupui-headline heading="h5" class="sub-headings">Train Information</groupui-headline>
+              <groupui-grid-row>
+                  <groupui-grid-col m="6" l="4">
+                    <groupui-input formControlName="pnrNo" placeholder="PNR Number" ngDefaultControl>
+                      <span slot="label">Ticket PNR Number</span>
+                    </groupui-input>
+                  </groupui-grid-col>
+                  <groupui-grid-col m="6" l="4">
+                    <groupui-input formControlName="trainNo" placeholder="Train Number" ngDefaultControl>
+                      <span slot="label">Train Number</span>
+                    </groupui-input>
+                  </groupui-grid-col>
+                  <groupui-grid-col m="6" l="4">
+                    <groupui-input formControlName="trainName" placeholder="Train Name" ngDefaultControl>
+                      <span slot="label">Train Name</span>
+                    </groupui-input>
+                  </groupui-grid-col>
+                </groupui-grid-row>
+
+                <div class="button-col">
+                  <groupui-button variant="secondary">Cancel</groupui-button>
+                  <groupui-button (click)="createTicket()">Submit</groupui-button>
+                </div>
+              </groupui-grid>
+            </groupui-card>
+          </form>
+          </div>
+          
+          </div>
+          </div>
+    </div>
+
+</div>

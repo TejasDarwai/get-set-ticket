@@ -1,0 +1,50 @@
+.template-signin-form {
+  padding: 20px 0;  
+}
+
+.template-signin-form groupui-card{
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.template-signin-form .header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.template-signin-form .header div {
+  width: 100%;
+}
+
+.template-signin-form .header .signin-btn-container {
+  text-align: right;
+}
+
+.template-signin-form groupui-divider{
+  margin: var(--groupui-spacing-9) 0 var(--groupui-spacing-7) 0;
+}
+
+.template-signin-form .input-wrapper {
+  margin: var(--groupui-spacing-5) 0;
+}
+
+.template-signin-form  groupui-checkbox {
+  margin: var(--groupui-spacing-7) 0;
+}
+
+.template-signin-form  .btn-container {
+  text-align: center;
+}
+
+.template-signin-form  .btn-container groupui-button {
+  margin: var(--groupui-spacing-7) 0;
+}
+
+.modal-live-demo {
+  height:400px
+}
+
+.modal-live-demo groupui-headline {
+  margin: 0 0 16px
+}

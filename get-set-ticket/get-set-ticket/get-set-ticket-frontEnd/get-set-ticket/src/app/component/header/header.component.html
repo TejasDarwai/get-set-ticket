@@ -1,0 +1,20 @@
+<div class="top-navigation-text-only container-border">
+    <groupui-header>
+        <groupui-headline heading="h5">Get Set Ticket</groupui-headline>
+        <groupui-action-area theme="vwag">
+            <groupui-button *ngIf="(auth.loggedinUserName != '')"  inverted="true" variant="secondary" (click)="logout()">Log Out</groupui-button>
+            <groupui-button *ngIf="(auth.loggedinUserName != '')" style="margin-left: 1.5rem;" inverted="true" variant="primary">{{auth.loggedinUserName}}</groupui-button>
+            <groupui-button routerLink="login" *ngIf="(auth.loggedinUserName == '')" inverted="true" variant="primary">Log In</groupui-button>    
+            <groupui-button routerLink="signup" style="margin-left: 1rem;" *ngIf="(auth.loggedinUserName == '')" inverted="true" variant="primary">Sign Up</groupui-button>
+                <groupui-action-area-popover-item>
+                <groupui-avatar slot="parent" inverted size="s"></groupui-avatar>
+                <groupui-text slot="content" class="popover-content"></groupui-text>
+            </groupui-action-area-popover-item>
+        </groupui-action-area>
+    </groupui-header>
+
+    <groupui-top-navigation *ngIf="(auth.loggedinUserName != '')" size="l">
+        <groupui-top-navigation-item active="true" routerLink="buy-ticket">Buy Tickets</groupui-top-navigation-item>
+        <groupui-top-navigation-item routerLink="sell-ticket">Sell Tickets</groupui-top-navigation-item>
+    </groupui-top-navigation>
+</div>

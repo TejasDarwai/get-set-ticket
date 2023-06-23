@@ -1,0 +1,55 @@
+.table-sticky-header {
+    padding: 72px 48px; 
+  }
+  
+  .table-sticky-header .table-demo {
+   padding-right: 1px; 
+  }
+  
+  .table-sticky-header .scroll-box {
+    height: 250px;
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    background-color: white;
+
+  }
+
+  ::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 50%;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #00354d;
+    border-radius: 20px;
+  }
+
+  .template-forms-others-service {
+    padding: var(--groupui-spacing-10);
+  }
+  
+  .template-forms-others-service groupui-card {
+    max-width: 960px;
+  }
+  
+  .template-forms-others-service .sub-headings {
+    margin-bottom: var(--groupui-spacing-5);
+    margin-top: var(--groupui-spacing-9);
+  }
+  
+  .template-forms-others-service #description {
+    margin-top: var(--groupui-spacing-3);
+  }
+  
+  .template-forms-others-service .button-col {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--groupui-spacing-9);
+  }
+  
+  .template-forms-others-service .button-col groupui-button:first-of-type {
+    margin-right: var(--groupui-spacing-5);
+  }

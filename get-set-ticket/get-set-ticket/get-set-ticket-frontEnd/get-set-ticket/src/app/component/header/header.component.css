@@ -1,0 +1,25 @@
+.text-margin{
+    color: white;
+    margin-top: 1.2rem;
+}
+  
+  .top-navigation-text-only groupui-headline {
+    flex: 1;
+    color: var(--groupui-vwag-color-white);
+  }
+  
+  .top-navigation-text-only groupui-icon {
+    margin-left: var(--groupui-spacing-7);
+  }
+  
+  .top-navigation-text-only groupui-header {
+    border-radius: 2px 2px 0 0;
+  }
+
+  groupui-action-area {
+    align-items: center;
+  }
+
+  groupui-header{
+    padding: 0 3.5rem 0 3.5rem;
+  }

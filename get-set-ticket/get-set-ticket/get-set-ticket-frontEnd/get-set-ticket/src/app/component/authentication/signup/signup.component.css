@@ -1,0 +1,41 @@
+.template-signup-form {
+    padding: 20px 0;
+  }
+  
+  .template-signup-form groupui-card {
+    width: 374px;
+  }
+  
+  .template-signup-form .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .template-signup-form .header div {
+    width: 100%;
+  }
+  
+  .template-signup-form .header .signin-btn-container {
+    text-align: right;
+  }
+  
+  .template-signup-form groupui-divider{
+    margin: var(--groupui-spacing-9) 0 var(--groupui-spacing-7) 0;
+  }
+  
+  .template-signup-form .input-wrapper {
+    margin: var(--groupui-spacing-5) 0;
+  }
+  
+  .template-signup-form  groupui-checkbox {
+    margin: var(--groupui-spacing-7) 0;
+  }
+  
+  .template-signup-form  .btn-container {
+    text-align: center;
+  }
+  
+  .template-signup-form  .btn-container groupui-button {
+    margin: var(--groupui-spacing-7) 0 0 0;
+  }

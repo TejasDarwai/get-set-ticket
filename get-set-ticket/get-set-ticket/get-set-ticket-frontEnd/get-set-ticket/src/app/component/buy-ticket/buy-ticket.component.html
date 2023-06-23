@@ -1,0 +1,84 @@
+<div class="container-md" style="display: flex; justify-content: space-evenly;">
+    <div class="template-forms-others-service container-border light-grey-background flex-center">
+        <div id="theme-switch-wrapper-108">
+          <div id="theme-switch-container-108">
+        <!--TEMPLATE STARTS HERE-->
+        <form (ngSubmit)="searchTicket()" [formGroup]="searchTicketForm">
+        <groupui-card padding="40px" elevation="8">
+          <groupui-grid gutter="16px" margin-type="custom" margin="0px">
+            <groupui-headline heading="h3">Search Tickets</groupui-headline>
+      
+            <groupui-grid-row style="margin-top: 1.5rem;">
+              <groupui-grid-col m="6">
+                <groupui-input formControlName="source" type="text" value="" placeholder="Source" ngDefaultControl>
+                  <span slot="label">Source</span>
+                </groupui-input>
+              </groupui-grid-col>
+              <groupui-grid-col m="6">
+                <groupui-input formControlName="destination" value="" placeholder="Destination" ngDefaultControl>
+                  <span slot="label">Destination</span>
+                </groupui-input>
+              </groupui-grid-col>
+              <groupui-grid-col m="6">
+                <div style="margin-top: 1.5rem;">
+                  <span style="margin-right: 0.5rem;">Journey Start Date</span>
+                  <input type="date" formControlName="journeyStartDate" ngDefaultControl>
+                </div>
+              </groupui-grid-col>
+            </groupui-grid-row>
+            <div class="button-col" style="margin-top: 1.5rem;">
+              <groupui-button variant="secondary">Cancel</groupui-button>
+              <groupui-button type="submit">Submit</groupui-button>
+            </div>
+          </groupui-grid>
+        </groupui-card>
+      </form>
+      </div>
+      
+      </div>
+      </div>
+</div>
+
+<div *ngIf="tickets.length > 0" style="width: 90%; margin-left: 5%; margin-top: 2rem;">
+    <div class="container-md">
+        <div class="table-sticky-header container-border" style="padding: 1.5rem;">
+            <groupui-headline style="color:#00354d; font-weight: bold; font-size: 1.3rem; margin-bottom: 1rem;">Available Confirmed Tickets</groupui-headline>
+            <div class="table-demo scroll-box">
+              <div class="table-responsive">
+                <table class="table table-bordered border border-secondary">
+                  <table class="table caption-top">
+                    <thead>
+                      <tr>
+                        <th scope="col">Source</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">journey Start Date</th>
+                        <th scope="col">journey End Date</th>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Train Number</th>
+                        <th scope="col">PNR Number</th>
+                        <th scope="col">Passenger Name</th>
+                        <th scope="col">Passenger Age</th>
+                        <th scope="col">Passenger Gender</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let ticket of tickets">
+                        <td>{{ticket.source}}</td>
+                        <td>{{ticket.destination}}</td>
+                        <td>{{ticket.journeyStartDate | date: 'MMM d, y'}}</td>
+                        <td>{{ticket.journeyEndDate | date: 'MMM d, y'}}</td>
+                        <td>{{ticket.trainName}}</td>
+                        <td>{{ticket.trainNo}}</td>
+                        <td>{{ticket.pnrNo}}</td>
+                        <td>{{ticket.name}}</td>
+                        <td>{{ticket.age}}</td>
+                        <td>{{ticket.gender}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
